@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rail Info Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🚆</span>
+          <div>
+            <h1>Rail Info Assistant</h1>
+            <p class="tagline">Scheduled Indian Railways timetable · independent project</p>
+          </div>
+        </div>
+        <button id="new-chat" class="ghost" type="button">New chat</button>
+      </header>
+
+      <main id="chat" class="chat" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <h2>Ask about trains, routes and timetables</h2>
+          <p>
+            Answers come only from the imported timetable. If something is not in the data,
+            the assistant says so instead of guessing.
+          </p>
+          <div class="chips">
+            <button class="chip" type="button">Trains from Bhubaneswar to New Delhi on 15 November 2026</button>
+            <button class="chip" type="button">Show the complete schedule for train 12801</button>
+            <button class="chip" type="button">Compare 12801 and 12802 from Bhubaneswar to New Delhi on 15 November 2026</button>
+          </div>
+          <p class="limitations">
+            Live running status, fares and seat availability are not configured.
+          </p>
+        </div>
+      </main>
+
+      <form id="composer" class="composer">
+        <textarea
+          id="message"
+          rows="1"
+          maxlength="2000"
+          placeholder="Ask about a train, route or timetable…"
+          aria-label="Your message"
+          required
+        ></textarea>
+        <button id="send" type="submit">Send</button>
+      </form>
+
+      <footer class="footer">
+        <span id="status">Checking data source…</span>
+        <span class="disclaimer">
+          Not an official Indian Railways or IRCTC service. Scheduled data only.
+        </span>
+      </footer>
+    </div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
